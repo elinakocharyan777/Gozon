@@ -1,0 +1,141 @@
+{
+  "info": {
+    "name": "Gozon (Orders+Payments)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Payments - CreateAccount",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-User-Id",
+            "value": "u1"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8082/accounts",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "accounts"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Payments - TopUp",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-User-Id",
+            "value": "u1"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"amount\": 1500}"
+        },
+        "url": {
+          "raw": "http://localhost:8082/accounts/topup",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "accounts",
+            "topup"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Payments - Balance",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-User-Id",
+            "value": "u1"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8082/accounts/balance",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "accounts",
+            "balance"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Orders - CreateOrder",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-User-Id",
+            "value": "u1"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"amount\": 500}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "orders"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Orders - ListOrders",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-User-Id",
+            "value": "u1"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8081/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "orders"
+          ]
+        }
+      }
+    }
+  ]
+}
